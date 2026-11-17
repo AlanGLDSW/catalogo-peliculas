@@ -5,6 +5,21 @@ use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Request;
 
+foreach ([
+    'bootstrap/cache',
+    'storage/app/private',
+    'storage/app/public',
+    'storage/framework/cache/data',
+    'storage/framework/sessions',
+    'storage/framework/views',
+    'storage/logs',
+] as $carpeta) {
+    $ruta = dirname(__DIR__).'/'.$carpeta;
+    if (! is_dir($ruta)) {
+        @mkdir($ruta, 0775, true);
+    }
+}
+
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
