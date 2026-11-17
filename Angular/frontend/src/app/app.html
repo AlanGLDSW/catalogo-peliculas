@@ -1,0 +1,32 @@
+<div class="container sitio my-4 p-0">
+
+  <div class="header d-flex align-items-center flex-wrap p-3">
+    <img src="logo.svg" alt="Catálogo de películas" class="logo me-auto">
+
+    <ul class="nav menu">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/" routerLinkActive="active"
+           [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/movies" routerLinkActive="active">Películas</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="contenido p-4 p-md-5">
+    <router-outlet />
+  </div>
+
+  <div class="pie p-4 text-center">
+    <p class="mb-1 fw-bold">Universidad de Guadalajara</p>
+    <p class="mb-1">UDG Virtual</p>
+    <p class="mb-1">Licenciatura en desarrollo de sistemas web</p>
+    <p class="mb-1">Conceptualización de servicios en la nube</p>
+    <p class="mb-1">Asesora: Rocío Belén Rubio Treviño</p>
+    <p class="mb-1">Estudiante: Alan Arturo González Corona</p>
+    <p class="mb-1">Código: 225385381</p>
+    <p class="mb-0">Contacto: <a href="mailto:alan.gonzalez8538@alumnos.udg.mx">alan.gonzalez8538@alumnos.udg.mx</a></p>
+  </div>
+
+</div>

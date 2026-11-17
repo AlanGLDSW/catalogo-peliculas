@@ -1,0 +1,9 @@
+.enlace-titulo {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.enlace-titulo:hover {
+  color: #ffb3b8;
+  text-decoration: underline;
+}

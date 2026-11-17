@@ -1,0 +1,35 @@
+.portada {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.anio {
+  background-color: #e50914;
+}
+
+.confirmacion {
+  max-width: 720px;
+  background-color: rgba(229, 9, 20, 0.15);
+  border: 1px solid #e50914;
+  border-radius: 0.5rem;
+}
+
+.trailer {
+  max-width: 720px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: #000;
+}
+
+.enlace-youtube {
+  color: inherit;
+  opacity: 0.85;
+}
+
+.enlace-youtube:hover {
+  opacity: 1;
+}

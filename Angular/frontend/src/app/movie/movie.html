@@ -1,0 +1,59 @@
+@if (cargando()) {
+  <p>Cargando película...</p>
+} @else {
+  @if (error()) {
+    <div class="alert alert-danger" role="alert">{{ error() }}</div>
+  }
+
+  @if (pelicula(); as peli) {
+    <div class="row g-4">
+      <div class="col-12 col-md-4">
+        @if (peli.cover) {
+          <img class="portada" [src]="peli.cover" [alt]="'Portada de ' + peli.title">
+        }
+      </div>
+
+      <div class="col-12 col-md-8">
+        <h1 class="display-6 fw-bold mb-2">{{ peli.title }}</h1>
+        <p class="mb-3"><span class="badge anio">{{ peli.year }}</span></p>
+        <h2 class="h5 text-uppercase mb-2">Sinopsis</h2>
+        <p class="mb-4">{{ peli.synopsis }}</p>
+
+        @if (trailerEmbed(); as video) {
+          <h2 class="h5 text-uppercase mb-2">Trailer</h2>
+          <div class="ratio ratio-16x9 trailer mb-2">
+            <iframe [src]="video" [title]="'Trailer de ' + peli.title" loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <p class="small mb-4">
+            <a class="enlace-youtube" [href]="'https://www.youtube.com/watch?v=' + idTrailer()" target="_blank" rel="noopener">
+              Ver el trailer en YouTube
+            </a>
+          </p>
+        }
+
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <a class="btn btn-catalogo" [routerLink]="['/movie', peli.id, 'edit']">Editar</a>
+          <button type="button" class="btn btn-outline-danger" (click)="pedirConfirmacion()"
+                  [disabled]="confirmando() || eliminando()">Eliminar</button>
+          <a class="btn btn-outline-light" routerLink="/movies">Regresar al catálogo</a>
+        </div>
+
+        @if (confirmando()) {
+          <div class="confirmacion p-3" role="alert">
+            <p class="fw-bold mb-3">¿Deseas borrar la película «{{ peli.title }}»? Esta acción no se puede deshacer.</p>
+            <div class="d-flex gap-2">
+              <button type="button" class="btn btn-danger" (click)="eliminar()" [disabled]="eliminando()">
+                {{ eliminando() ? 'Eliminando...' : 'Sí, borrar' }}
+              </button>
+              <button type="button" class="btn btn-outline-light" (click)="cancelar()" [disabled]="eliminando()">Cancelar</button>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  } @else {
+    <a class="btn btn-outline-light" routerLink="/movies">Regresar al catálogo</a>
+  }
+}

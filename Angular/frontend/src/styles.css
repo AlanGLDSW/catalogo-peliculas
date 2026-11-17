@@ -1,0 +1,125 @@
+body {
+  background-color: #0b1220;
+  background-image: url("/fondo.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.sitio {
+  background-color: rgba(10, 14, 25, 0.85);
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.header {
+  background-color: rgba(0, 0, 0, 0.45);
+  border-bottom: 3px solid #e50914;
+}
+
+.logo {
+  height: 64px;
+  width: auto;
+}
+
+.menu .nav-link {
+  color: #f8f9fa;
+  border-bottom: 2px solid transparent;
+}
+
+.menu .nav-link:hover {
+  color: #ffb3b8;
+}
+
+.menu .nav-link.active {
+  color: #ffffff;
+  font-weight: bold;
+  border-bottom-color: #e50914;
+}
+
+.card-catalogo {
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f8f9fa;
+}
+
+.card-catalogo .card-title {
+  color: #ffb3b8;
+}
+
+.tabla-catalogo {
+  --bs-table-bg: transparent;
+  --bs-table-striped-bg: rgba(255, 255, 255, 0.06);
+  --bs-table-striped-color: #f8f9fa;
+  --bs-table-hover-bg: rgba(229, 9, 20, 0.2);
+  --bs-table-hover-color: #ffffff;
+  color: #f8f9fa;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.tabla-catalogo thead th {
+  color: #ffb3b8;
+  border-bottom: 2px solid #e50914;
+}
+
+.btn-catalogo {
+  background-color: #e50914;
+  border-color: #e50914;
+  color: #ffffff;
+}
+
+.btn-catalogo:hover {
+  background-color: #b20710;
+  border-color: #b20710;
+  color: #ffffff;
+}
+
+.pie {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top: 3px solid #e50914;
+  font-size: 0.95rem;
+}
+
+.pie a {
+  color: #ffb3b8;
+}
+
+.pie a:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 576px) {
+  .logo {
+    height: 48px;
+  }
+}
+
+.form-catalogo {
+  max-width: 720px;
+}
+
+.form-catalogo .form-label {
+  color: #ffb3b8;
+  font-weight: bold;
+}
+
+.form-catalogo .form-control {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #f8f9fa;
+}
+
+.form-catalogo .form-control::placeholder {
+  color: rgba(248, 249, 250, 0.45);
+}
+
+.form-catalogo .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: #e50914;
+  box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.25);
+  color: #ffffff;
+}
